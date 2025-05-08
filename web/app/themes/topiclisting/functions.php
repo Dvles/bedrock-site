@@ -1,4 +1,31 @@
 <?php
+// Register menu locations
+function topiclisting_menus() {
+	$locations = array(
+    	'primary' => "Primary Header Menu",
+    	'footer' => "Footer Menu",
+	);
+	register_nav_menus($locations);
+}
+add_action('init', 'topiclisting_menus');
+
+// Add class "click-scroll" to primary menu links
+add_filter('nav_menu_link_attributes', function ($atts, $item, $args, $depth) {
+    if ($args->theme_location === 'primary') {
+        $atts['class'] .= ' click-scroll';
+    }
+    return $atts;
+}, 10, 4);
+
+
+/**
+ * Register Custom Navigation Walker
+ */
+function register_navwalker(){
+	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+}
+add_action( 'after_setup_theme', 'register_navwalker' );
+
 
 // Enqueues style.css on the front.
 if (! function_exists("topiclisting_enque_styles")){
@@ -73,11 +100,7 @@ if (! function_exists("topiclisting_enque_scripts")){
     }
 }
 
-
-add_action('wp_enqueue_scripts', 'topiclisting_enque_styles');
-add_action('wp_enqueue_scripts', 'topiclisting_enque_scripts');
-
-
+// Enqueues fonts
 function topiclisting_enqueue_google_fonts() {
     // Preconnect for performance
     wp_enqueue_style( 'google-fonts-preconnect', 'https://fonts.googleapis.com', [], null );
@@ -92,9 +115,6 @@ function topiclisting_enqueue_google_fonts() {
         null
     );
 }
+add_action('wp_enqueue_scripts', 'topiclisting_enque_styles');
+add_action('wp_enqueue_scripts', 'topiclisting_enque_scripts');
 add_action( 'wp_enqueue_styles', 'topiclisting_enqueue_google_fonts' );
-
-
-
-error_log("Enqueuing styles...");
-error_log('functions.php is being loaded');

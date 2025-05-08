@@ -6,12 +6,9 @@
     <?php get_template_part('template-parts/hero'); ?>
     <?php get_template_part('template-parts/featured'); ?>
         
-
-
-
     </main>
 
-    <?php get_footer(); ?>
+<?php get_footer(); ?>
 
 
 
