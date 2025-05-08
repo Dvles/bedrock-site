@@ -11,25 +11,16 @@
 
                 <div class="col-lg-3 col-md-4 col-6">
                     <h6 class="site-footer-title mb-3">Resources</h6>
-
-                    <ul class="site-footer-links">
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Home</a>
-                        </li>
-
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">How it works</a>
-                        </li>
-
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">FAQs</a>
-                        </li>
-
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Contact</a>
-                        </li>
-                    </ul>
-                </div>
+                        <?php
+                            wp_nav_menu([
+                                'theme_location'  => 'footer',
+                                'container'       => false,
+                                'menu_class'      => 'site-footer-links',
+                                'fallback_cb'     => false,
+                                'depth'           => 1, // No dropdowns in the footer
+                            ]);
+                        ?>
+</div>
 
                 <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
                     <h6 class="site-footer-title mb-3">Information</h6>

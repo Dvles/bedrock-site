@@ -17,6 +17,22 @@ add_filter('nav_menu_link_attributes', function ($atts, $item, $args, $depth) {
     return $atts;
 }, 10, 4);
 
+// Add class to footer menu ul
+add_filter('nav_menu_css_class', function ($classes, $item, $args, $depth) {
+    if ($args->theme_location === 'footer') {
+        return ['site-footer-link-item'];
+    }
+    return $classes;
+}, 10, 4);
+
+// Add class to footer menu a
+add_filter('nav_menu_link_attributes', function ($atts, $item, $args, $depth) {
+    if ($args->theme_location === 'footer') {
+        $atts['class'] = 'site-footer-link';
+    }
+    return $atts;
+}, 10, 4);
+
 
 /**
  * Register Custom Navigation Walker
