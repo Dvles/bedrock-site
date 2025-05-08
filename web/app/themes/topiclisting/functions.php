@@ -65,7 +65,7 @@ if (! function_exists("topiclisting_enque_scripts")){
 
         wp_enqueue_script(
             'custom-js',
-            "$theme_uri/assets/custom.js",
+            "$theme_uri/assets/js/custom.js",
             ['jquery', 'bootstrap', 'jquery-sticky', 'click-scroll'],
             'all',
             true
