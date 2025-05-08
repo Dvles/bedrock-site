@@ -20,9 +20,13 @@
                                 'depth'           => 1, // No dropdowns in the footer
                             ]);
                         ?>
-</div>
+                </div>
 
                 <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
+                    <?php if (is_active_sidebar('footer-column-3')) : ?>
+                        <?php dynamic_sidebar('footer-column-3'); ?>
+                    <?php endif; ?>
+<!-- 
                     <h6 class="site-footer-title mb-3">Information</h6>
 
                     <p class="text-white d-flex mb-1">
@@ -35,7 +39,7 @@
                         <a href="mailto:info@company.com" class="site-footer-link">
                             info@company.com
                         </a>
-                    </p>
+                    </p> -->
                 </div>
 
                 <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">

@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * Register Menu functionalities
+ */
+
 // Register menu locations
 function topiclisting_menus() {
 	$locations = array(
@@ -41,6 +46,26 @@ function register_navwalker(){
 	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 }
 add_action( 'after_setup_theme', 'register_navwalker' );
+
+
+
+/**
+* Register Widget Areas
+*/
+
+function topiclisting_register_sidebars() {
+	for ($i = 1; $i <= 4; $i++) {
+    	register_sidebar([
+        	'name'      	=> "Footer Column $i",
+        	'id'        	=> "footer-column-$i",
+        	'before_widget' => '<div class="footer-widget mb-4">',
+        	'after_widget'  => '</div>',
+        	'before_title'  => '<h6 class="site-footer-title mb-3">',
+        	'after_title'   => '</h6>',
+    	]);
+	}
+}
+add_action('widgets_init', 'topiclisting_register_sidebars');
 
 
 // Enqueues style.css on the front.
