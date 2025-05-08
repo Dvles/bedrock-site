@@ -38,13 +38,12 @@ if (! function_exists("topiclisting_enque_scripts")){
     function topiclisting_enque_scripts(){
         $theme_uri = get_template_directory_uri();
 
-        wp_enqueue_script("jquery", "$theme_uri/assets/js/jquery.min.js", [], 1.0, 'all');
-
+        wp_enqueue_script('jquery'); // never enqueue your own jQuery !!
         wp_enqueue_script(
             'bootstrap',
             "$theme_uri/assets/js/bootstrap.bundle.min.js",
             ['jquery'],
-            '1.0',
+            'all',
             true
         );
 
@@ -52,7 +51,7 @@ if (! function_exists("topiclisting_enque_scripts")){
             'jquery-sticky',
             "$theme_uri/assets/js/jquery.sticky.js",
             ['jquery'],
-            '1.0',
+            'all',
             true
         );
 
@@ -60,7 +59,7 @@ if (! function_exists("topiclisting_enque_scripts")){
             'click-scroll',
             "$theme_uri/assets/js/click-scroll.js",
             ['jquery'],
-            '1.0',
+            'all',
             true
         );
 
@@ -68,7 +67,7 @@ if (! function_exists("topiclisting_enque_scripts")){
             'custom-js',
             "$theme_uri/assets/custom.js",
             ['jquery', 'bootstrap', 'jquery-sticky', 'click-scroll'],
-            '1.0',
+            'all',
             true
         );
     }

@@ -1,8 +1,11 @@
 
+jQuery(function($) {
+
+  
   (function ($) {
   
   "use strict";
-
+  
     // MENU
     $('.navbar-collapse a').on('click',function(){
       $(".navbar-collapse").collapse('hide');
@@ -27,7 +30,7 @@
         }, 300);
       }
     });
-
+  
     $(window).on('scroll', function(){
       function isScrollIntoView(elem, index) {
         var docViewTop = $(window).scrollTop();
@@ -49,5 +52,8 @@
     });
   
   })(window.jQuery);
+  
 
+});  
 
+  
