@@ -49,15 +49,35 @@ add_action('admin_menu', 'topiclisting_add_theme_menu_page');
 // render/save data
 function topiclisting_render_theme_settings_page() {
     ?>
-    <div class="wrap">
-        <h1>Theme Settings</h1>
-        <form method="post" action="options.php">
-            <?php
-                settings_fields('topiclisting_settings_group');
-                do_settings_sections('theme-settings');
-                submit_button();
-            ?>
+    <div class="wrap" style="max-width: 720px; margin-top: 40px;">
+        <h1 style="font-size: 2.5rem; font-weight: 600; margin-bottom: 24px;">Theme Settings</h1>
+        
+        <form method="post" action="options.php" style="background: #fff; padding: 32px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+            <?php settings_fields('topiclisting_settings_group'); ?>
+            <?php do_settings_sections('theme-settings'); ?>
+            
+            <hr style="margin: 24px 0;">
+            
+            <?php submit_button('Save Settings', 'primary', 'submit', false); ?>
         </form>
     </div>
+    <style>
+        .form-table th {
+            font-weight: 600;
+            font-size: 16px;
+            padding: 20px 10px 20px 0;
+        }
+        .form-table td {
+            padding: 20px 10px;
+        }
+        input.regular-text {
+            padding: 8px 12px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            width: 100%;
+            max-width: 400px;
+        }
+    </style>
     <?php
 }
