@@ -47,6 +47,11 @@ function register_navwalker(){
 }
 add_action( 'after_setup_theme', 'register_navwalker' );
 
+/**
+ * Load custom Theme Settings page for editable footer info (phone/email)
+ */
+
+ require_once get_template_directory() . '/inc/theme-settings.php';
 
 
 /**
@@ -66,6 +71,11 @@ function topiclisting_register_sidebars() {
 	}
 }
 add_action('widgets_init', 'topiclisting_register_sidebars');
+
+// Add class to widget headings
+add_filter('widget_title', function($title, $instance, $id_base) {
+    return '<h6 class="site-footer-title mb-3">' . $title . '</h6>';
+}, 10, 3);
 
 
 // Enqueues style.css on the front.
