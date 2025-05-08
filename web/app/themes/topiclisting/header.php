@@ -1,5 +1,3 @@
-<?php get_header(); ?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,3 +9,4 @@
     
     <?php wp_head(); ?>
 </head>
+<body id="top">

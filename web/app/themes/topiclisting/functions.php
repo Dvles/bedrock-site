@@ -1,7 +1,5 @@
 <?php
 
-
-
 // Enqueues style.css on the front.
 if (! function_exists("topiclisting_enque_styles")){
 
@@ -77,7 +75,7 @@ if (! function_exists("topiclisting_enque_scripts")){
 }
 
 
-add_action('wp_enqueue_styles', 'topiclisting_enque_styles');
+add_action('wp_enqueue_scripts', 'topiclisting_enque_styles');
 add_action('wp_enqueue_scripts', 'topiclisting_enque_scripts');
 
 
@@ -95,4 +93,9 @@ function topiclisting_enqueue_google_fonts() {
         null
     );
 }
-add_action( 'wp_enqueue_scripts', 'topiclisting_enqueue_google_fonts' );
+add_action( 'wp_enqueue_styles', 'topiclisting_enqueue_google_fonts' );
+
+
+
+error_log("Enqueuing styles...");
+error_log('functions.php is being loaded');
