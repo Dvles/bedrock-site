@@ -14,12 +14,16 @@
 
 /* Main .inside */
 .acf-postbox .inside {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
   padding: 0 !important;
-
 }
+
+.acf-postbox .acf-fields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 
 
 .acf-postbox{
