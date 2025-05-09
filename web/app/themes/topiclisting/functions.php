@@ -169,3 +169,10 @@ function topiclisting_enqueue_google_fonts() {
 add_action('wp_enqueue_scripts', 'topiclisting_enque_styles');
 add_action('wp_enqueue_scripts', 'topiclisting_enque_scripts');
 add_action( 'wp_enqueue_styles', 'topiclisting_enqueue_google_fonts' );
+
+/**
+* Register Duplicate post functionality
+*/
+require_once get_template_directory() . '/inc/duplicate-post.php';
+
+
