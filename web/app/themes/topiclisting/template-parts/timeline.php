@@ -71,11 +71,21 @@ function topiclisting_get_bi_icon($field_name, $default = 'check')
       <div class="col-12 text-center mt-5">
         <p class="text-white">
           <?php echo esc_html(get_field('timeline_cta_text')); ?>
-          <a href="<?php echo esc_url(get_field('timeline_cta_link')); ?>" class="btn custom-btn custom-border-btn ms-3">
-            <?php echo esc_html(get_field('timeline_cta_button_text')); ?>
-          </a>
+
+          <?php if (get_field('timeline_cta_button_text')) : ?>
+            <a href="<?php echo esc_url(get_field('timeline_cta_link')); ?>" class="btn custom-btn custom-border-btn ms-3">
+              <?php echo esc_html(get_field('timeline_cta_button_text')); ?>
+            </a>
+          <?php endif; ?>
+
+          <?php if (get_field('timeline_cta_button_show_2')) : ?>
+            <a href="<?php echo esc_url(get_field('timeline_cta_link_2')); ?>" class="btn custom-btn custom-border-btn ms-3">
+              <?php echo esc_html(get_field('timeline_cta_button_text_2')); ?>
+            </a>
+          <?php endif; ?>
         </p>
       </div>
+
 
     </div>
   </div>
