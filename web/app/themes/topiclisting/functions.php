@@ -176,3 +176,7 @@ add_action( 'wp_enqueue_styles', 'topiclisting_enqueue_google_fonts' );
 require_once get_template_directory() . '/inc/duplicate-post.php';
 
 
+/**
+ * Register featured post meta box and styling logic
+ */
+require_once get_template_directory() . '/inc/featured-post-meta.php';
