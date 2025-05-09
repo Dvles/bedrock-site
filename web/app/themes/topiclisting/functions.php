@@ -180,3 +180,8 @@ require_once get_template_directory() . '/inc/duplicate-post.php';
  * Register featured post meta box and styling logic
  */
 require_once get_template_directory() . '/inc/featured-post-meta.php';
+
+/**
+ * Register ADMIN style for better UI/UX
+ */
+require_once get_template_directory() . '/inc/admin.php';
