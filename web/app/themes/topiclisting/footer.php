@@ -7,7 +7,7 @@
                         <i class="bi-back"></i>
                         <span>Topic</span>
                     </a>
-                </div>
+                </div><i class="bi bi-search" style="font-size: 2rem;"></i>
 
                 <div class="col-lg-3 col-md-4 col-6">
                     <h6 class="site-footer-title mb-3">Resources</h6>

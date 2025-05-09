@@ -93,17 +93,17 @@ if (! function_exists("topiclisting_enque_styles")){
         );
 
         wp_enqueue_style(
-            'topiclisting-bootstrap-icons',
-            "$theme_uri/assets/css/bootstrap-icons.css",
-            ['topiclisting-bootstrap'], 
-            '1.0',
-            'all'
-        );
+            'topiclisting-bootstrap-icons-cdn',
+            'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css',
+            [],
+            null
+          );
+          
 
         wp_enqueue_style(
             'topiclisting-css',
             "$theme_uri/assets/css/templatemo-topic-listing.css",
-            ['topiclisting-bootstrap', 'topiclisting-bootstrap-icons'],
+            ['topiclisting-bootstrap', 'topiclisting-bootstrap-icons-cdn'],
             '1.0',
             'all'
         );
