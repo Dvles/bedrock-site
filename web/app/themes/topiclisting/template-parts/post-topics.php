@@ -6,7 +6,7 @@
  */
 ?>
 
-<section class="explore-section section-padding" id="section_2">
+<section class="explore-section section-padding" id="topics">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">

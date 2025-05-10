@@ -25,7 +25,7 @@ function topiclisting_get_bi_icon($field_name, $default = 'check')
 
 ?>
 
-<section class="timeline-section section-padding" id="section_3">
+<section class="timeline-section section-padding" id="howitworks">
   <div class="section-overlay"></div>
 
   <div class="container">
