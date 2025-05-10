@@ -1,5 +1,9 @@
 <?php
 
+//  Enable Featured Image Support
+add_theme_support('post-thumbnails');
+add_theme_support('responsive-embeds');
+
 /**
  * Register Menu functionalities
  */

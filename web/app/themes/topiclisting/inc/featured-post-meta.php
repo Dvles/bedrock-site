@@ -23,7 +23,7 @@ function topiclisting_featured_meta_box_callback($post) {
     <p>
         <label>
             <input type="checkbox" name="topiclisting_featured_overlay" value="1" <?php checked($has_overlay, 1); ?> />
-            Use Overlay Layout
+            Show featured image
         </label>
     </p>
     <?php

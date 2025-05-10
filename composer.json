@@ -40,7 +40,8 @@
     "roots/wordpress": "6.8.1",
     "roots/wp-config": "1.0.0",
     "wpackagist-theme/twentytwentyfive": "^1.0",
-    "wpackagist-plugin/advanced-custom-fields": "^6.0"
+    "wpackagist-plugin/advanced-custom-fields": "^6.0",
+    "wpackagist-plugin/ewww-image-optimizer": "^8.1"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
