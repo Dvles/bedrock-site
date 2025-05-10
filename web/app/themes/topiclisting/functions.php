@@ -111,6 +111,14 @@ if (! function_exists("topiclisting_enque_styles")){
             '1.0',
             'all'
         );
+
+        wp_enqueue_style(
+            'splide-min-css',
+            "https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/css/splide.min.css",
+            ['topiclisting-bootstrap', 'topiclisting-bootstrap-icons-cdn'],
+            '4',
+            'all'
+        );
     }
 }
 
@@ -152,6 +160,24 @@ if (! function_exists("topiclisting_enque_scripts")){
             'all',
             true
         );
+
+        wp_enqueue_script(
+            'splide-min-js',
+            "https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js",
+            ['jquery', 'bootstrap', 'jquery-sticky', 'click-scroll'],
+            'all',
+            true
+        );
+
+        wp_enqueue_script(
+            'splie-slider-js',
+            "$theme_uri/assets/js/splide-slider.js",
+            ['jquery', 'bootstrap', 'jquery-sticky', 'click-scroll'],
+            'all',
+            true
+        );
+
+        
     }
 }
 
