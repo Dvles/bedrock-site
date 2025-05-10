@@ -7,7 +7,7 @@
 
 
 ?>
-<section class="faq-section section-padding" id="section_4">
+<section class="faq-section section-padding" id="faq">
   <div class="container">
     <div class="row">
 
