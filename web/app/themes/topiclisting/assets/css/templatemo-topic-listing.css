@@ -901,7 +901,6 @@ blockquote {
   z-index: 1;
 }
 
-/* Specific to Featured Section */
 /* Only affects featured block */
 .custom-block-featured {
   height: 100%;
@@ -924,8 +923,21 @@ blockquote {
   border-radius: var(--border-radius-medium);
 }
 
+/*---------------------------------------
+  POSTS          
+-----------------------------------------*/
 
+.white-content {
+  color: white;
+}
 
+.white-content p,
+.white-content h1,
+.white-content h2,
+.white-content h3,
+.white-content li {
+  color: white;
+}
 
 
 /*---------------------------------------
