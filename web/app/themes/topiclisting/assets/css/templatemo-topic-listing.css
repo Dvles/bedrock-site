@@ -825,6 +825,108 @@ blockquote {
   background-color: var(--primary-color);
 }
 
+/*---------------------------------------
+  FEATURED BLOCKS (Isolated from topics)
+-----------------------------------------*/
+.featured-block {
+  border-radius: var(--border-radius-medium);
+  position: relative;
+  overflow: hidden;
+  padding: 30px;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.featured-block:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-3px);
+}
+
+.featured-block > a {
+  width: 100%;
+  height: 100%;
+}
+
+.featured-block-image {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  margin-top: 35px;
+  border-radius: var(--border-radius-medium);
+}
+
+.featured-block .rounded-pill {
+  border-radius: 5px !important;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  line-height: 20px;
+}
+
+/* Overlay variation */
+.featured-block-overlay {
+  height: 100%;
+  min-height: 350px;
+  padding: 0;
+}
+
+.featured-overlay-text {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 30px;
+}
+
+.featured-social-share {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  padding: 20px 35px;
+}
+
+.featured-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+/* Specific to Featured Section */
+/* Only affects featured block */
+.custom-block-featured {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  border-radius: var(--border-radius-medium);
+}
+
+.custom-block-featured .content-area {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.custom-block-featured .custom-block-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--border-radius-medium);
+}
+
+
+
+
 
 /*---------------------------------------
   FAQs              
