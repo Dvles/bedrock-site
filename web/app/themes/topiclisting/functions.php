@@ -1,5 +1,7 @@
 <?php
 
+
+
 //  Enable Featured Image Support
 add_theme_support('post-thumbnails');
 add_theme_support('responsive-embeds');
@@ -223,3 +225,15 @@ require_once get_template_directory() . '/inc/featured-post-meta.php';
  * Register ADMIN style for better UI/UX
  */
 require_once get_template_directory() . '/inc/admin.php';
+
+/**
+ * Register Client role
+ */
+if ( function_exists('get_template_directory') ) {
+  $admin_customizations = get_template_directory() . '/inc/admin-customizations.php';
+  if ( file_exists($admin_customizations) ) {
+    require_once $admin_customizations;
+  }
+}
+
+
