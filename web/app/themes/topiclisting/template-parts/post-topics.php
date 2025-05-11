@@ -6,11 +6,16 @@
  */
 ?>
 
+<?php
+$browsetopics_page = get_page_by_path('browse-topics');
+$browse_topics_title = $browsetopics_page ? get_the_title($browsetopics_page) : 'Browse Topics';
+?>
+
 <section class="explore-section section-padding" id="topics">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h2 class="mb-4">Browse Topics</h2>
+        <h2 class="mb-4"><?php echo esc_html($browse_topics_title); ?></h2>
       </div>
     </div>
   </div>
