@@ -4,6 +4,12 @@
  * Contact page
  */
 
+
+
+// Get contact page by slug
+$contact_page = get_page_by_path('contact');
+$contact_id = $contact_page ? $contact_page->ID : null;
+
 ?>
 
 <section class="contact-section section-padding section-bg" id="contact">
@@ -11,7 +17,7 @@
     <div class="row">
 
       <div class="col-lg-12 col-12 text-center">
-        <h2 class="mb-5"><?php the_field('contact_title'); ?></h2>
+        <h2 class="mb-5"><?php the_field('contact_title', $contact_id  ); ?></h2>
       </div>
 
       <div class="col-lg-5 col-12 mb-4 mb-lg-0">
@@ -19,9 +25,9 @@
       </div>
 
       <div class="col-lg-3 col-md-6 col-12 mb-3 mb-lg- mb-md-0 ms-auto">
-        <h4 class="mb-3"><?php the_field('hq1_city'); ?></h4>
+        <h4 class="mb-3"><?php the_field('hq1_city', $contact_id ); ?></h4>
 
-        <p><?php the_field('hq1_address'); ?></p>
+        <p><?php the_field('hq1_address', $contact_id ); ?></p>
 
         <hr>
 
@@ -29,7 +35,7 @@
           <span class="me-2">Phone</span>
 
           <a href="tel: 305-240-9671" class="site-footer-link">
-            <?php the_field('hq1_phone'); ?>
+            <?php the_field('hq1_phone', $contact_id ); ?>
           </a>
         </p>
 
@@ -37,7 +43,7 @@
           <span class="me-2">Email</span>
 
           <a href="mailto:info@company.com" class="site-footer-link">
-            <?php the_field('hq1_email'); ?>
+            <?php the_field('hq1_email', $contact_id ); ?>
           </a>
         </p>
       </div>
@@ -45,7 +51,7 @@
       <div class="col-lg-3 col-md-6 col-12 mx-auto">
         <h4 class="mb-3"><?php the_field('hq2_city'); ?></h4>
 
-        <p><?php the_field('hq2_address'); ?></p>
+        <p><?php the_field('hq2_address', $contact_id ); ?></p>
 
         <hr>
 
@@ -53,7 +59,7 @@
           <span class="me-2">Phone</span>
 
           <a href="tel: 305-240-9671" class="site-footer-link">
-            <?php the_field('hq2_phone'); ?>
+            <?php the_field('hq2_phone', $contact_id ); ?>
           </a>
         </p>
 
@@ -61,7 +67,7 @@
           <span class="me-2">Email</span>
 
           <a href="mailto:info@company.com" class="site-footer-link">
-            <?php the_field('hq2_email'); ?>
+            <?php the_field('hq2_email', $contact_id ); ?>
           </a>
         </p>
       </div>
