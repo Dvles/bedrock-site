@@ -1,7 +1,6 @@
 <?php
 
 
-
 //  Enable Featured Image Support
 add_theme_support('post-thumbnails');
 add_theme_support('responsive-embeds');
@@ -59,29 +58,6 @@ add_action( 'after_setup_theme', 'register_navwalker' );
 
  require_once get_template_directory() . '/inc/theme-settings.php';
 
-
-/**
-* Register Widget Areas
-*/
-
-function topiclisting_register_sidebars() {
-	for ($i = 1; $i <= 4; $i++) {
-    	register_sidebar([
-        	'name'      	=> "Footer Column $i",
-        	'id'        	=> "footer-column-$i",
-        	'before_widget' => '<div class="footer-widget mb-4">',
-        	'after_widget'  => '</div>',
-        	'before_title'  => '<h6 class="site-footer-title mb-3">',
-        	'after_title'   => '</h6>',
-    	]);
-	}
-}
-add_action('widgets_init', 'topiclisting_register_sidebars');
-
-// Add class to widget headings
-add_filter('widget_title', function($title, $instance, $id_base) {
-    return '<h6 class="site-footer-title mb-3">' . $title . '</h6>';
-}, 10, 3);
 
 
 // Enqueues style.css on the front.
@@ -226,47 +202,29 @@ add_action('admin_enqueue_scripts', 'enqueue_client_admin_styles');
 add_action('wp_enqueue_scripts', 'topiclisting_enque_scripts');
 add_action( 'wp_enqueue_styles', 'topiclisting_enqueue_google_fonts' );
 
-/**
-* Register Duplicate post functionality
-*/
+// Register Duplicate post functionality
 require_once get_template_directory() . '/inc/duplicate-post.php';
 
-
-/**
- * Register featured post meta box and styling logic
- */
+// Register featured post meta box and styling logic
 require_once get_template_directory() . '/inc/featured-post-meta.php';
 
-/**
- * Register ADMIN style for better UI/UX
- */
+// Register ADMIN style for better UI/UX
 require_once get_template_directory() . '/inc/admin.php';
 
-/**
- * Register Client role
- */
-if ( function_exists('get_template_directory') ) {
-  $admin_customizations = get_template_directory() . '/inc/admin-customizations.php';
-  if ( file_exists($admin_customizations) ) {
-    require_once $admin_customizations;
-  }
-}
+// Register Widget Area 
+require_once get_template_directory() . '/inc/widget-area.php';
 
-/**
- * Register Client role
- */
+// Register  
+require_once get_template_directory() . '/inc/widget-area.php';
+
+// Register  
+require_once get_template_directory() . '/inc/custom-admin-footer.php';
+
+// Register Client role
 if ( function_exists('get_template_directory') ) {
   $admin_customizations = get_template_directory() . '/inc/page-post-id.php';
   if ( file_exists($admin_customizations) ) {
     require_once $admin_customizations;
   }
 }
-
-function custom_admin_footer_logo() {
-    echo '<span id="footer-thankyou">';
-    echo 'Custom WP Built with ❤️ by YourCompany &nbsp;';
-    echo '<img src="' . get_template_directory_uri() . '/assets/images/logo-small.png" alt="Logo" style="height:16px; vertical-align:middle;">';
-    echo '</span>';
-}
-add_filter('admin_footer_text', 'custom_admin_footer_logo');
 
