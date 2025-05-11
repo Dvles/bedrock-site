@@ -4,8 +4,18 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "875b99903a3bac87722ff483cc15af3a",
+    "content-hash": "cab822bac6bc0bb447012bb095eecf1e",
     "packages": [
+        {
+            "name": "bestwebsoft/pinterest-wordpress-plugin",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bestwebsoft/pinterest-wordpress-plugin.git",
+                "reference": "master"
+            },
+            "type": "wordpress-plugin"
+        },
         {
             "name": "composer/installers",
             "version": "v2.3.0",
@@ -1070,6 +1080,24 @@
             "homepage": "https://wordpress.org/plugins/ewww-image-optimizer/"
         },
         {
+            "name": "wpackagist-plugin/gs-behance-portfolio",
+            "version": "3.1.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/gs-behance-portfolio/",
+                "reference": "tags/3.1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/gs-behance-portfolio.3.1.2.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/gs-behance-portfolio/"
+        },
+        {
             "name": "wpackagist-theme/twentytwentyfive",
             "version": "1.2",
             "source": {
@@ -2090,6 +2118,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "bestwebsoft/pinterest-wordpress-plugin": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,

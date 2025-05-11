@@ -177,9 +177,17 @@ if (! function_exists("topiclisting_enque_scripts")){
             true
         );
 
+        wp_enqueue_script(
+            'pinterest', 
+            'https://assets.pinterest.com/js/pinit.js', 
+            [], 
+            null, 
+            true);
+
         
     }
 }
+
 
 // Enqueues fonts
 function topiclisting_enqueue_google_fonts() {
