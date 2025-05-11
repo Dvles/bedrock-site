@@ -252,6 +252,16 @@ if ( function_exists('get_template_directory') ) {
   }
 }
 
+/**
+ * Register Client role
+ */
+if ( function_exists('get_template_directory') ) {
+  $admin_customizations = get_template_directory() . '/inc/page-post-id.php';
+  if ( file_exists($admin_customizations) ) {
+    require_once $admin_customizations;
+  }
+}
+
 function custom_admin_footer_logo() {
     echo '<span id="footer-thankyou">';
     echo 'Custom WP Built with ❤️ by YourCompany &nbsp;';
