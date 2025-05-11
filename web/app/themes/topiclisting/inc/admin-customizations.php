@@ -1,22 +1,17 @@
 <?php
 
-// add client role
-function add_custom_client_role() {
-    add_role('client_editor', 'Client Editor', [
-        'read' => true,
-        'edit_posts' => true,
-        'edit_pages' => true,
-        'edit_others_posts' => true,
-        'edit_others_pages' => true,
-        'publish_posts' => true,
-        'publish_pages' => true,
-        'delete_posts' => false,
-        'delete_pages' => false,
-        'upload_files' => true,
-        'edit_theme_options' => false,
-    ]);
-}
-add_action('init', 'add_custom_client_role');
+// Clone the default Editor role and create 'Client Editor'
+add_action('init', function () {
+    remove_role('client_editor'); // clean reset
+
+    $editor = get_role('editor');
+
+    if ($editor) {
+        add_role('client_editor', 'Client Editor', $editor->capabilities);
+    }
+});
+
+
 
 // remove unecessary theme pages
 function customize_admin_menu_for_client() {

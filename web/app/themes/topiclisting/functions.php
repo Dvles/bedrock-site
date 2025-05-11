@@ -259,3 +259,4 @@ function custom_admin_footer_logo() {
     echo '</span>';
 }
 add_filter('admin_footer_text', 'custom_admin_footer_logo');
+
