@@ -27,12 +27,21 @@
                     <?php if ($phone = get_option('topiclisting_phone')): ?>
                         <p class="text-white d-flex mb-1">
                             <a href="tel:<?php echo esc_attr($phone); ?>" class="site-footer-link">
-                                <?php echo esc_html($phone); ?>
+                                <?php echo esc_html(get_field("phone_number")); ?>
                             </a>
                         </p>
                     <?php endif; ?>
 
-                    <?php if ($email = get_option('topiclisting_email')): ?>
+                    <!-- <?php // if($email = get_option('topiclisting_email')): ?>
+                        <p class="text-white d-flex">
+                            <a href="mailto:<?php echo esc_attr($email); ?>" class="site-footer-link">
+                                <?php //echo esc_html($email); ?>
+                            </a>
+                        </p>
+                    <?php //endif; ?> -->
+
+
+                    <?php if ($email = get_field('email_adress')): ?>
                         <p class="text-white d-flex">
                             <a href="mailto:<?php echo esc_attr($email); ?>" class="site-footer-link">
                                 <?php echo esc_html($email); ?>
