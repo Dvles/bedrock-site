@@ -1,0 +1,20 @@
+.client-welcome-widget {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  padding: 1rem;
+}
+
+.client-welcome-widget, .client-welcome-widget p {
+  font-size: 16px;
+}
+#custom_client_welcome .hndle {
+  font-size: 24px !important;
+}
+
+
+.client-welcome-widget ul {
+  margin-left: 1rem;
+}
+.client-welcome-widget li {
+  margin-bottom: 0.5rem;
+}

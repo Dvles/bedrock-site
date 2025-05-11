@@ -124,6 +124,21 @@ if (! function_exists("topiclisting_enque_styles")){
     }
 }
 
+// Enqueues style.css on dashboard.
+function enqueue_client_admin_styles($hook) {
+    // Only load on dashboard
+    if ($hook !== 'index.php') {
+        return;
+    }
+
+    wp_enqueue_style(
+        'client-dashboard-style',
+        get_template_directory_uri() . '/assets/css/client-dashboard.css',
+        [],
+        filemtime(get_template_directory() . '/assets/css/client-dashboard.css')
+    );
+}
+
 // Enqueues scripts on the front
 if (! function_exists("topiclisting_enque_scripts")){
 
@@ -207,6 +222,7 @@ function topiclisting_enqueue_google_fonts() {
     );
 }
 add_action('wp_enqueue_scripts', 'topiclisting_enque_styles');
+add_action('admin_enqueue_scripts', 'enqueue_client_admin_styles');
 add_action('wp_enqueue_scripts', 'topiclisting_enque_scripts');
 add_action( 'wp_enqueue_styles', 'topiclisting_enqueue_google_fonts' );
 
@@ -236,4 +252,10 @@ if ( function_exists('get_template_directory') ) {
   }
 }
 
-
+function custom_admin_footer_logo() {
+    echo '<span id="footer-thankyou">';
+    echo 'Custom WP Built with ❤️ by YourCompany &nbsp;';
+    echo '<img src="' . get_template_directory_uri() . '/assets/images/logo-small.png" alt="Logo" style="height:16px; vertical-align:middle;">';
+    echo '</span>';
+}
+add_filter('admin_footer_text', 'custom_admin_footer_logo');

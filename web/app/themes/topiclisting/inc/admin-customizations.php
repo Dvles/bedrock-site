@@ -1,4 +1,6 @@
 <?php
+
+// add client role
 function add_custom_client_role() {
     add_role('client_editor', 'Client Editor', [
         'read' => true,
@@ -16,6 +18,7 @@ function add_custom_client_role() {
 }
 add_action('init', 'add_custom_client_role');
 
+// remove unecessary theme pages
 function customize_admin_menu_for_client() {
     if (!current_user_can('administrator')) {
         remove_menu_page('tools.php');
@@ -29,12 +32,37 @@ function customize_admin_menu_for_client() {
 }
 add_action('admin_menu', 'customize_admin_menu_for_client', 999);
 
-function client_dashboard_widget() {
-    wp_add_dashboard_widget('custom_client_help', 'Welcome!', function() {
-        echo '<p>Welcome to your site’s dashboard. Use the sidebar to edit pages or posts.</p>';
+// remove unecessary dashboard widgets
+function remove_default_dashboard_widgets_for_client() {
+    if (!current_user_can('client_editor')) {
+        return;
+    }
+
+    remove_meta_box('dashboard_quick_press', 'dashboard', 'side');       // Quick Draft
+    remove_meta_box('dashboard_primary', 'dashboard', 'side');           // WP Events & News
+    remove_meta_box('dashboard_right_now', 'dashboard', 'normal');       // At a Glance
+    remove_meta_box('dashboard_activity', 'dashboard', 'normal');        // Activity
+}
+add_action('wp_dashboard_setup', 'remove_default_dashboard_widgets_for_client');
+
+
+// custom dashboard widget
+function add_custom_client_welcome_widget() {
+    if (!current_user_can('client_editor')) {
+        return;
+    }
+
+    $current_user = wp_get_current_user();
+    $first_name = $current_user->user_firstname ?: $current_user->display_name;
+    $title = '👋 Hi ' . esc_html($first_name);
+
+    wp_add_dashboard_widget('custom_client_welcome', $title, function () {
+        get_template_part('template-parts/dashboard/welcome-client');
     });
 }
-add_action('wp_dashboard_setup', 'client_dashboard_widget');
+add_action('wp_dashboard_setup', 'add_custom_client_welcome_widget');
+
+
 
 
 ?>
