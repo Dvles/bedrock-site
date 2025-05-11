@@ -9,6 +9,9 @@ https://templatemo.com/tm-590-topic-listing
 /*---------------------------------------
   CUSTOM PROPERTIES ( VARIABLES )             
 -----------------------------------------*/
+
+
+
 :root {
   --white-color:                  #ffffff;
   --primary-color:                #13547a;
@@ -1149,6 +1152,42 @@ blockquote {
 .social-icon-link:hover {
   background: var(--primary-color);
   color: var(--white-color);
+}
+
+/*---------------------------------------
+  BEHANCE SLIDER STYLES               
+-----------------------------------------*/
+
+
+
+#splide-latest-projects .splide__slide img.behance-slide-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: var(--border-radius-medium);
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+
+#splide-latest-projects {
+  padding: 2rem;
+  overflow: visible;
+}
+
+.behance-slide-image {
+  transition: transform 0.3s ease;
+
+}
+
+.behance-slide-image:hover {
+  transform: translateY(-5px);
+}
+
+
+
+button.splide__arrow.splide__arrow--prev, button.splide__arrow.splide__arrow--next {
+  background-color: var(--secondary-color);
 }
 
 
